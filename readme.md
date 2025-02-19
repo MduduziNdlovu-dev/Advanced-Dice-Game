@@ -44,6 +44,6 @@ This isn't just a dice game—it's a demonstration of:
 
 ## 📩 Contact Me
 📧 Email: mduduzindlovu02@gmail.com  
-💼 LinkedIn: [Your LinkedIn]("https://www.linkedin.com/in/mduduzi-ndlovu/")  
+💼 LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/mduduzi-ndlovu/)  
 🌐 Portfolio: [Your Portfolio](your-portfolio-url)
 
