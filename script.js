@@ -1,3 +1,13 @@
+
+- Removed redundant updateRadioOption(5, 0) calls from getHighestDuplicates, detectFullHouse, and checkForStraights.
+- Added a single updateRadioOption(5, 0) call at the end of the rollDiceBtn event handler.
+
+
+
+
+
+
+You said:
 const listOfAllDice = document.querySelectorAll(".die");
 const scoreInputs = document.querySelectorAll("#score-options input");
 const scoreSpans = document.querySelectorAll("#score-options span");
@@ -37,14 +47,14 @@ const updateStats = () => {
 const updateRadioOption = (index, score) => {
   scoreInputs[index].disabled = false;
   scoreInputs[index].value = score;
-  scoreSpans[index].textContent = `, score = ${score}`;
+  scoreSpans[index].textContent = , score = ${score};
 };
 
 const updateScore = (selectedValue, achieved) => {
   score += parseInt(selectedValue);
   totalScoreElement.textContent = score;
 
-  scoreHistory.innerHTML += `<li>${achieved} : ${selectedValue}</li>`;
+  scoreHistory.innerHTML += <li>${achieved} : ${selectedValue}</li>;
 };
 
 
@@ -193,7 +203,7 @@ keepScoreBtn.addEventListener("click", () => {
     updateScore(selectedValue, achieved);
     if (round > 6) {
       setTimeout(() => {
-        alert(`Game Over! Your total score is ${score}`);
+        alert(Game Over! Your total score is ${score});
         resetGame();
       }, 500);
     }
