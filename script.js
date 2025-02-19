@@ -201,3 +201,58 @@ keepScoreBtn.addEventListener("click", () => {
     alert("Please select an option or roll the dice");
   }
 });
+
+
+// Now lets have some fun
+const canvas = document.getElementById("backgroundCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const diceParticles = [];
+
+class DiceParticle {
+  constructor() {
+    this.size = Math.random() * 30 + 20; 
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.speedY = Math.random() * 2 + 1;
+    this.opacity = Math.random() * 0.5 + 0.2;
+    this.value = Math.floor(Math.random() * 6) + 1;
+  }
+
+  draw() {
+    ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+    ctx.fillRect(this.x, this.y, this.size, this.size);
+    ctx.fillStyle = "black";
+    ctx.font = `${this.size * 0.8}px Arial`;
+    ctx.fillText(this.value, this.x + this.size / 4, this.y + this.size / 1.5);
+  }
+
+  update() {
+    this.y += this.speedY;
+    if (this.y > canvas.height) {
+      this.y = -this.size;
+      this.x = Math.random() * canvas.width;
+      this.value = Math.floor(Math.random() * 6) + 1;
+    }
+  }
+}
+
+
+for (let i = 0; i < 20; i++) {
+  diceParticles.push(new DiceParticle());
+}
+
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  diceParticles.forEach((dice) => {
+    dice.update();
+    dice.draw();
+  });
+  requestAnimationFrame(animate);
+}
+
+animate();

@@ -119,3 +119,13 @@ input[type="radio"]:disabled + label {
     width: 120px;
   }
 }
+
+#backgroundCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Ensures it's behind all content */
+  }
+  
