@@ -37,14 +37,14 @@ const updateStats = () => {
 const updateRadioOption = (index, score) => {
   scoreInputs[index].disabled = false;
   scoreInputs[index].value = score;
-  scoreSpans[index].textContent = , score = ${score};
+  scoreSpans[index].textContent = `, score = ${score}`;
 };
 
 const updateScore = (selectedValue, achieved) => {
   score += parseInt(selectedValue);
   totalScoreElement.textContent = score;
 
-  scoreHistory.innerHTML += <li>${achieved} : ${selectedValue}</li>;
+  scoreHistory.innerHTML += `<li>${achieved} : ${selectedValue}</li>`;
 };
 
 
